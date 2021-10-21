@@ -39,4 +39,4 @@
     - [ ] Click in **GET** method on your `Method Execution` view in API Gateway
     - [ ] Click `Actions` > `Deploy API`
     - [ ] Select the `test` phase that we created previously, and ping the `/messages` endpoint
-    - [  Verify that the new JSON Object is presented with a _random_ string response from the _getRandomMessage_ function we created on Lambda
+    - [ ] Verify that the new JSON Object is presented with a _random_ string response from the _getRandomMessage_ function we created on Lambda
