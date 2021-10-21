@@ -11,12 +11,12 @@
     - [ ] Select `Create Resource`
 
 3. Configure the `Resource` 
-    - [ ] On the _Resource Name_ field enter `message`
-    - [ ] On the _Resource Path_ field enter `/message`
+    - [ ] On the `Resource Name` field enter _message_
+    - [ ] On the `Resource Path` field enter _/message_
     - [ ] Click `Create Resource` button
 
 4. Create an HTTP Method to associate with your `Resource`
-    - [ ] Click `Actions`, click `GET` method, click the _Checkmark Button_
+    - [ ] Click `Actions`, click `GET` method, click the `Checkmark` button
     - [ ] Configure the _Integration Method_ in this case we will choose the _Mock_ method, click `Save`
 
 5. You will now be redirected to the _Method Execution Screen_. The general flow of thi execution engine is as follows
