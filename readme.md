@@ -10,3 +10,6 @@
 
 ### Lesson 2: AWS Lambda Function 
 > Initial lesson on creating first lambda function, `getRandomMessages` which returns a String response when called. 
+
+### Lesson 3: Integrating Lambda Function with API Gateway
+> Configure the `/messages` endpoint created in **Lesson 1** to call the `getRandomMessages` Lambda Function when an HTTP GET request is iniated by the client.
