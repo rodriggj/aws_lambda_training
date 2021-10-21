@@ -6,7 +6,7 @@
 ## Process 
 
 ### Lesson 1: AWS API Gateway - 
-> Create an endpoint `/messages` with a *GET* HTTP method deployed to a `test` stage.
+> Create an endpoint `/messages` with a **GET** HTTP method deployed to a `test` stage.
 
 ### Lesson 2: AWS Lambda Function 
 > Initial lesson on creating first lambda function, `getRandomMessages` which returns a String response when called. 
