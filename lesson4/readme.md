@@ -70,7 +70,7 @@ There are 3 things you need to remember regarding `events` with AWS Lambda:
 - [ ] `Invokation` events can be `synchronous` or `asynchronous` depending on which AWS service fired the event
 - [ ] an `event source` will either have a `push` or a `pull/poll` based event source
 
-1. Lambda functions are _invoked_ via an event listener. The _event Object_ that triggers the invokation can come from several AWS Services, and the AWS Service will determine the contents of the _event payload_. 
+1. Lambda functions are _invoked_ via an event listener. The _event Object_ that triggers the invokation can come from several AWS Services, and the AWS Service will determine the contents of the _event payload_. We will explore a few of these _event payloads_ in `3. Sample Event Objects` section below.
 
 + In the AWS Console, on the AWS Lambda service page, at the top left-nav, you can see several of the services that can provide an _event invokation_ to the Lambda function. These services include: 
 
