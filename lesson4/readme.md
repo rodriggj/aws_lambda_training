@@ -1,7 +1,7 @@
 # Fundamental Lambda 
 
 >**OBJECTIVE**
->Review some core components / processes / etc. that are fundamental to having in depth understanding of Lambda Service.
+> Review some core components / processes / etc. that are fundamental to having in depth understanding of Lambda Service.
 > Specifically we will review the following 3 items: 
 > - [ ] Lambda Handler Syntax with NodeJs
 > - [ ] Addtional explanation of `event` Object
@@ -66,9 +66,9 @@ const resizeImage = (data) => new Promise(resolve, reject) => {
 ## 2. Additional explaintion -> `event` parameter
 
 There are 3 things you need to remember regarding `events` with AWS Lambda: 
-+ 1. `event` Objects are different depending on which AWS service invoked the event
-+ 2. `Invokation` events can be `synchronous` or `asynchronous` depending on which AWS service fired the event
-+ 3. an `event source` will either have a `push` or a `pull/poll` based event source
+- [ ] `event` Objects are different depending on which AWS service invoked the event
+- [ ] `Invokation` events can be `synchronous` or `asynchronous` depending on which AWS service fired the event
+- [ ] an `event source` will either have a `push` or a `pull/poll` based event source
 
 1. Lambda functions are _invoked_ via an event listener. The _event Object_ that triggers the invokation can come from several AWS Services, and the AWS Service will determine the contents of the _event payload_. 
 
