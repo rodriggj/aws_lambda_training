@@ -26,7 +26,11 @@ exports.handler = (event, context, callback) => {
 }
 ```
 
->**READS LIKE:** Here we are _exporting_ a function called _handler_ using typical NodeJs syntax. Within our _handler_ function, which is an _arrow function_ we pass 3 parameters, 1. the _event_ Object which is the triggering event coming from one of the AWS services (S3 bucket upload, API Gateway Call, etc.), 2. the _context_ will return data about the context of the function call (e.g. function name, execution time, etc.) & 3. a _callback_ function which will be invoked after the `...` code is ran (whatever that code maybe). We are then returning a result by calling _callback_ and passing in a _result_ parameter, which is what will come back from our `...` code. 
+>**READS LIKE:** Here we are _exporting_ a function called _handler_ using typical NodeJs syntax. Within our _handler_ function we are using _arrow function_ syntax and passing three(3) parameters:
+>- [ ] the _event_ Object which is the triggering event coming from one of the AWS services (S3 bucket upload, API Gateway Call, etc.), 
+>- [ ] the _context_ will return data about the context of the function call (e.g. function name, execution time, etc.) & 
+>- [ ] a _callback_ function which will be invoked after the `...` code is ran (whatever that code maybe). 
+>We are then returning a result by calling _callback_ and passing in a _result_ parameter, which is what will come back from our `...` code. 
 
 4. We can write the same function, as an `async` function by some simple modifications: 
 
