@@ -150,7 +150,7 @@ A Developer can take a look at several of the `event Objects` that are fired fro
 
 ---------
 
-4. The `context` Object(s)
+## 4. The `context` Object(s)
 
 The context object provides information about the execution of the lambda function. Consider this object metadata that is used for reporting or logging purposes by AWS. The `context` Object not only provides metadata, but there are a suite of methods that can be called to provide input on the context as well. 
 
