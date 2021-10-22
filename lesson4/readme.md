@@ -28,7 +28,7 @@ exports.handler = (event, context, callback) => {
 
 >**READS LIKE:** Here we are _exporting_ a function called _handler_ using typical NodeJs syntax. Within our _handler_ function we are using _arrow function_ syntax and passing three(3) parameters:
 >- [ ] the `event` Object which is the triggering event coming from one of the AWS services (S3 bucket upload, API Gateway Call, etc.), 
->- [ ] the `context` will return data about the context of the function call (e.g. function name, execution time, etc.) & 
+>- [ ] the `context` Object will return data about the context, or the runtime execution, of the function call (e.g. function name, execution time, etc.) & 
 >- [ ] a `callback` function which will be invoked after the `...` code is ran (whatever that code maybe)
 > 
 > We are then returning a result by calling _callback_ and passing in a _result_ parameter, which is what will come back from our `...` code. 
@@ -97,7 +97,7 @@ There are 3 things you need to remember regarding `events` with AWS Lambda:
 
 ------------
 
-## 3. Sample Event Objects
+## 3. The `event` Object(s)
 
 A Developer can take a look at several of the `event Objects` that are fired from various AWS Services in the AWS Lambda console. 
 
@@ -149,3 +149,50 @@ A Developer can take a look at several of the `event Objects` that are fired fro
 2. These event payloads can be used in our Lambda functions to establish business logic in our lambda invokations. 
 
 ---------
+
+4. The `context` Object(s)
+
+The context object provides information about the execution of the lambda function. Consider this object metadata that is used for reporting or logging purposes by AWS. The `context` Object not only provides metadata, but there are a suite of methods that can be called to provide input on the context as well. 
+
+For example, assume that you executing some debugging, and needed to know how long before the lambda invokation will timeout? You can use the `context` object and the `getRemainingTime` method to find this out. 
+
+```javascript 
+exports.handler = async (event, context) => {
+    // Will return remaining time in miliseconds before the lambda function timesout
+    context.getRemainingTimeInMillis();
+
+    // Will return the name, which is an attribute of the context Object, of the invoked function
+    context.functionName;
+
+    // Will return the name of the function version
+    context.functionVersion;
+
+    // Returns the Amazon Resource Name (arn) of the function
+    context.functionArn;
+
+    // Returns the request id of the current invokation
+    context.awsRequestId;
+
+    // Returns the memory limit of the invoked function
+    context.memoryLimitMB;
+
+    // Returns information from AWS Cognito about the identity provider
+    context.identity;
+
+    // Returns information about our logging information 
+    context.logGroupName;
+    context.logStreamName;
+
+    // Returns information about the client application
+    context.clientContext;
+    context.clientContext.client.app_title
+    context.clientContext.Custom
+    context.clientContext.env.platform
+    context.clientContext.env.make // model
+}
+```
+
+>**RESOURCE:** Other uses of the `context` Object can be found in the AWS Documentation [here](https://docs.aws.amazon.com/lambda/latest/dg/nodejs-context.html)
+
+----------
+
