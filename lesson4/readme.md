@@ -74,11 +74,11 @@ There are 3 things you need to remember regarding `events` with AWS Lambda:
 
 + In the AWS Console, on the AWS Lambda service page, at the top left-nav, you can see several of the services that can provide an _event invokation_ to the Lambda function. These services include: 
 
-    + - [ ] API Gateway
-    + - [ ] AWS IoT
-    + - [ ] Alexa Skills
-    + - [ ] CloudWatch Events 
-    + - [ ] etc...
+    + API Gateway
+    + AWS IoT
+    + Alexa Skills
+    + CloudWatch Events 
+    + etc...
 
 2. Lambda _Invokation Types_ can be either `synchronous` or `asynchronous`, depending on the AWS Lambda _event source_. For example, 
     - an `S3` event is always `asynchronous`
