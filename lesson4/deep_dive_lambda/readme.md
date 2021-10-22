@@ -196,3 +196,35 @@ exports.handler = async (event, context) => {
 
 ----------
 
+## 5. Error Handling 
+
+There are several ways to configure `error handling` within your functions. 
+
+1. Example 1, utilize the callback function to display an error
+
+```javascript 
+exports.handler = (event, context, callback) => {
+  const error = new Error("An error occured!")
+  callback(error)
+}
+```
+
+2. Example 2, if utilizing an async function 
+
+```javascript 
+exports.handler = async (event, context) => {
+  const error = new Error("An error occured!")
+  throw(error)
+}
+```
+
+3. Example 3, utilizing _console.log()_ to display errors
+
+```javascript 
+exports.handler = async (event, context) => {
+  console.error("An error occured!")
+  console.log("A log message.")
+  console.info("An informative message.")
+  console.warn("Warning message.")
+}
+```
