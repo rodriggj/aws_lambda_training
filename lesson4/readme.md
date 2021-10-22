@@ -99,5 +99,53 @@ There are 3 things you need to remember regarding `events` with AWS Lambda:
 
 ## 3. Sample Event Objects
 
+A Developer can take a look at several of the `event Objects` that are fired from various AWS Services in the AWS Lambda console. 
 
+1. Navigate to the AWS Lambda console
+    - [ ] Right under the `Function Overview` component, is a vertical navbar, with several options to include `Test`. Click on `Test`
+    - [ ] Select `New Event` radial button
+    - [ ] In the `Template` field when selected will be a dynamically generated component with multple selection options of AWS Services that produce events that can invoke lambda functions. Select an option and view the event payload (e.g. `SQS Receive Message` vs. `CloudWatch Scheduled Event`)
 
+```json
+// sqs-receive-message
+{
+  "Records": [
+    {
+      "messageId": "19dd0b57-b21e-4ac1-bd88-01bbb068cb78",
+      "receiptHandle": "MessageReceiptHandle",
+      "body": "Hello from SQS!",
+      "attributes": {
+        "ApproximateReceiveCount": "1",
+        "SentTimestamp": "1523232000000",
+        "SenderId": "123456789012",
+        "ApproximateFirstReceiveTimestamp": "1523232000001"
+      },
+      "messageAttributes": {},
+      "md5OfBody": "{{{md5_of_body}}}",
+      "eventSource": "aws:sqs",
+      "eventSourceARN": "arn:aws:sqs:us-east-1:123456789012:MyQueue",
+      "awsRegion": "us-east-1"
+    }
+  ]
+}
+```
+
+```json
+// cloudwatch-scheduled-event
+{
+  "id": "cdc73f9d-aea9-11e3-9d5a-835b769c0d9c",
+  "detail-type": "Scheduled Event",
+  "source": "aws.events",
+  "account": "123456789012",
+  "time": "1970-01-01T00:00:00Z",
+  "region": "us-east-1",
+  "resources": [
+    "arn:aws:events:us-east-1:123456789012:rule/ExampleRule"
+  ],
+  "detail": {}
+}
+```
+
+2. These event payloads can be used in our Lambda functions to establish business logic in our lambda invokations. 
+
+---------
