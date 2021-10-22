@@ -2,8 +2,12 @@
 
 >**OBJECTIVE**
 >Review some core components / processes / etc. that are fundamental to having in depth understanding of Lambda Service.
+> Specifically we will review the following 3 items: 
+> - [ ] Lambda Handler Syntax with NodeJs
+> - [ ] Addtional explanation of `event` Object
+> - [ ] Sample Event Objects
 
-## Lambda Handler Syntax with NodeJS - `event`, `context`, & `callback`
+## 1. Lambda Handler Syntax with NodeJS - `event`, `context`, & `callback`
 > If using the NodeJS runtime for development of lambda functions there are some fundamental differences between runtime versions and function syntax that need to be understood to utilize NodeJS. 
 
  For example, assume we are going to write a funciton called `greetMe`. The syntax for such a function as a boilerplate _NodeJs_ function on Lambda would look something like this. 
@@ -59,7 +63,7 @@ const resizeImage = (data) => new Promise(resolve, reject) => {
 
 ---------
 
-## Additional explaintion -> `event` parameter
+## 2. Additional explaintion -> `event` parameter
 
 There are 3 things you need to remember regarding `events` with AWS Lambda: 
 + 1. `event` Objects are different depending on which AWS service invoked the event
@@ -87,7 +91,7 @@ In the AWS Console, on the AWS Lambda service page, at the top left-nav, you can
 
 ------------
 
-## Sample Event Data on AWS Lambda Console
+## 3. Sample Event Objects
 
 
 
