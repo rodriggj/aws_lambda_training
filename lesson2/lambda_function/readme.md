@@ -52,4 +52,3 @@ exports.handler = (event, context, callback) => {
 6. Click `Deploy`. 
 
 7. Click `Test`. You may be prompted to configure a test event by a modal screen popping up. If so provide a `Test Event Name`, like _myEvent_ and click `Save`. Leave the default payload as is. Click the `Test` button, and you should see a random message appear in the UI as you configured in the Lambda function. 
-
