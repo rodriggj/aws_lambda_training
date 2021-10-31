@@ -19,3 +19,6 @@
 
 ### Lesson 5: Hands-On Excercise: `greetMe` Lambda
 > Here we build a `greetMe` Lambda function. This function is triggered by an `AWS API Gateway Proxy` event, which we manipulate the event Object to include `pathParams` and `queryParams`. We then install a dependent library `moment` to create a timestamp. We deploy our code to AWS lambda using the `zip file / file upload` process and then test the lambda function with the API Gateway Proxy event object.
+
+### Lesson 6: Hands-On Excercise: `greetMe` API Gateway
+> Here we configure API gateway to provide access to the `greetMe` lambda function. We'll cover the use of `API Gateway Proxy` configuration, testing of the path and query parameters. Configuring `CORS`. 
