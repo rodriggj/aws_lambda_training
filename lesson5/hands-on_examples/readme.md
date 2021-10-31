@@ -139,3 +139,30 @@ exports.handler = async (event, context) => {
 + Name the Test Event if you haven't already and click `Create` 
 + Click `Deploy`
 + Click `Test`
+
+-----------
+
+## Lambda Limits 
+
+- [ ] **Memory Size**
+> 128MB to 300MB, in 64MB increments
+
+- [ ] **Ephemeral Disk Capacity**
+> 512MB 
+
+- [ ] **Timeout** 
+> 900 seconds to 15 minutes
+
+- [ ] **Body Payload Size**
+> 6MB for Synchronous Invocation and 128KB for Asynchronous Invocation
+
+- [ ] **Deployment Package Size**
+> 50MB when compressed and 250MB when uncompressed, 3MB for online editing with AWS Lambda console
+
+- [ ] **Total Package size per region** 
+> 75GB
+
+- [ ] **Concurrency Limits**
+> 1000 Executions from a single account / Per region across _ALL_ lambda functions
+
+_*These limits stand to change at any time by AWS &/or may be able to be modified by calling to AWS for Quota modification. The standard Lambda Quotas are published [here](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html)*_
