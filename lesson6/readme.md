@@ -65,3 +65,24 @@ let { lang, ...info } = event.queryStringParameters || {};
 
 ### 2. Configuring CORS on API Gateway
 
+> When we test this application we get a successful 200 responses, but that may not always be the case. If we were to send this request from some other domain, we may be presented with a `Cross Origin Resource Sharing` (CORS) error in the browser. To hand this using API Gateway we need to enable CORS which will pass a few Headers (`Allow Access` and an `Options` header)  that will handle this error for us; but this needs to be configured on API Gateway **AND** in our Lambda function. 
+
+1. Open a new tab in `test-cors.org`, copy/paste our endpoint URL in this interface. Try to send the request and you will see an error `Access-Control-Allow-Origin`.
+
+2. Open the API Gateway. Remember **because we are using the `Gateway Proxy Integration` we cannot use the `Integration Response` block to enable CORS so we have to include a response Header in our Lambda function**. This will now become a 2 part process 
+    - [ ] on the /{name} endpoint click `Actions` / `Enable CORS`. This will enabel the `Options` header which will allow the `preflight` request to pass from any domain.
+    - [ ] Now nav to the Lambda `greetMe` and modify the lambda response Object to include the following: 
+
+```javascript 
+return {
+    statusCode: 200, 
+    headers: {
+        "Access-Control-Allow-Origin": "*"
+    }, 
+    body: JSON.stringify(response)
+}
+```
+
+3. Send the request again on `test-cors.org` and you will see the there is no more error and an HTTP 200 response is submitted. 
+
+---------
