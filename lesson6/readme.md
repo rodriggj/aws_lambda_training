@@ -3,7 +3,7 @@
 **Objective**
 > Implement our lambda function `greetMe` which provides for path and query paramaters to API Gateway to learn how these services work together to provide path and query paramater funcitonality. 
 
-### Adding `greetMe` lambda to API Gateway & configuring API Gateway Proxy
+### 1. Adding `greetMe` lambda to API Gateway & configuring API Gateway Proxy
 
 1. Here we are going to create an endpoint that can access our `greetMe` function that was built in _lesson5_. 
 - [ ] Nav to API Gateway
@@ -63,5 +63,5 @@ let { lang, ...info } = event.queryStringParameters || {};
 
 ---------
 
-### Configuring CORS on API Gateway
+### 2. Configuring CORS on API Gateway
 
