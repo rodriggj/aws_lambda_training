@@ -86,3 +86,20 @@ return {
 3. Send the request again on `test-cors.org` and you will see the there is no more error and an HTTP 200 response is submitted. 
 
 ---------
+
+### 3. Request Validators
+
+> Recall that there is a `Method Request` block in our API Gateway. In this block we can make sure we process any validators prior to the Lambda function processing the request. In this case we want to make sue that our request to the `greetMe` lambda function **HAS** a query paramater for at least **lang**.
+
+- [ ] In the `Method Request` block of our `/name` GET endpoint click `Request Validator`
+- [ ] You will be presented with a drop down. We don't have a body in our GET request, so select `Validate query string parameters and headers`, and click `check` radial button
+- [ ] Now we have 2 options to configure our validator: 
+    + 1. We can add specific `headers` or 
+    + 2. We can configure `URL Query String Parameters`, click the `+` button and enter `lang`, click the `checkmark` radial button, and finally check the  `required` radial button.
+
+> Now the `Method Request` will have some logic to check prior to sending to the `Integration Request` block and the `greetMe` lambda function. In a case where the user doesn't provide the `lang` query parameter in the request, the validator will fail, and never be passed downstream. 
+
+- [ ] Before testing in the browser, make sure you `Deploy the API`, then test. 
+
+-----------
+
